@@ -1,15 +1,10 @@
-# KGen Website
+# KGen Website (Relative Links)
 
-Static site for GitHub Pages with:
-- `/` (Home): KGen products & services overview
-- `/products.html` (Products): four product tiles (Absence+, Enhanced HR, two placeholders)
-- `/admin/hr-policy.html` (Hidden): private page for HR policy (not linked; robots noindex/nofollow)
+This version uses **relative links** so it works on GitHub **Project Pages** (URL includes your repo name).
 
-## Deploy (GitHub Pages)
-1. Create repo (or use existing) and upload these files.
-2. Settings → Pages → Source: Deploy from a branch; Branch: `main` and Folder: `/ (root)`.
-3. Open the Pages URL.
+URLs:
+- Home: `/index.html` (or the root of your Pages URL)
+- Products: `/products.html`
+- Hidden Admin: `/admin/hr-policy.html` (unlinked; `noindex`)
 
-## Notes
-- The admin page is hidden by being unlinked and marked `noindex`. It is **not password-protected**; anyone with the exact URL can view it.
-- For true privacy, use a private repo or add real authentication (requires a different hosting setup).
+Deploy steps: same as before (Settings → Pages → Deploy from a branch → main / (root)).
