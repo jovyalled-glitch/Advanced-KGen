@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin — HR Policy (Private)</title>
+<link rel="stylesheet" href="../assets/style.css">
+<meta name="robots" content="noindex,nofollow">
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <div class="brand"><div class="logo" aria-hidden="true">🔒</div> <span>Admin</span></div>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <span class="small">This area is private (not linked).</span>
+      </div>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="card">
+    <h1>HR Policy (Private Workspace)</h1>
+    <p class="lead">This page is hidden from normal visitors (not linked anywhere and marked <code>noindex</code>). Share the direct URL <strong>/admin/hr-policy.html</strong> only with people you trust.</p>
+    <h2>Add your HR policy content</h2>
+    <p>Paste your policy below or replace this page with embedded content. For a quick start, paste text in the box and click “Download HTML” to save your changes locally, then re-upload.</p>
+    <textarea id="policy" rows="12" placeholder="Paste your HR policy text here..."></textarea>
+    <p><button class="btn primary" id="saveBtn">Download HTML with my policy</button></p>
+    <p class="small">Note: This site is static. The button will generate a local file for you to re-upload to GitHub.</p>
+  </section>
+</main>
+<footer><div class="container">© <span id="year"></span> KGen</div></footer>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('saveBtn').addEventListener('click', function(){
+  const txt = document.getElementById('policy').value.replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const html = `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin — HR Policy (Private)</title>
+<link rel="stylesheet" href="../assets/style.css">
+<meta name="robots" content="noindex,nofollow">
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <div class="brand"><div class="logo" aria-hidden="true">🔒</div> <span>Admin</span></div>
+      <div class="nav-links"><a href="/">Home</a></div>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="card">
+    <h1>HR Policy</h1>
+    <div class="lead" style="white-space:pre-wrap">${txt}</div>
+  </section>
+</main>
+<footer><div class="container">© <span id="year"></span> KGen</div></footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body></html>`;
+  const blob = new Blob([html], {type:'text/html'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'hr-policy.html';
+  a.click();
+  URL.revokeObjectURL(a.href);
+});
+</script>
+</body>
+</html>
