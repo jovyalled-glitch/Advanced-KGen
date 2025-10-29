@@ -22,12 +22,13 @@
 <main class="container">
   <section class="card">
     <h1>HR Policy (Private Workspace)</h1>
-    <p class="lead">This page is hidden from normal visitors (not linked anywhere and marked <code>noindex</code>). Share the direct URL <strong>/admin/hr-policy.html</strong> only with people you trust.</p>
-    <h2>Add your HR policy content</h2>
-    <p>Paste your policy below or replace this page with embedded content. For a quick start, paste text in the box and click “Download HTML” to save your changes locally, then re-upload.</p>
+    <p class="lead">Paste your policy below and click <strong>Download HTML with my policy</strong>. Then upload the file to this folder in GitHub to publish it.</p>
     <textarea id="policy" rows="12" placeholder="Paste your HR policy text here..."></textarea>
-    <p><button class="btn primary" id="saveBtn">Download HTML with my policy</button></p>
-    <p class="small">Note: This site is static. The button will generate a local file for you to re-upload to GitHub.</p>
+    <p>
+      <button class="btn primary" id="saveBtn">Download HTML with my policy</button>
+      <button class="btn" id="copyBtn">Copy text to clipboard</button>
+    </p>
+    <p class="small">Trouble downloading? Use the <em>Copy</em> button, then paste into a fresh file named <code>hr-policy.html</code> in this folder.</p>
   </section>
 </main>
 <footer><div class="container">© <span id="year"></span> KGen</div></footer>
@@ -62,11 +63,23 @@ document.getElementById('saveBtn').addEventListener('click', function(){
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body></html>`;
   const blob = new Blob([html], {type:'text/html'});
+  const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
+  a.href = url;
   a.download = 'hr-policy.html';
+  document.body.appendChild(a);
   a.click();
-  URL.revokeObjectURL(a.href);
+  a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url), 1500);
+});
+document.getElementById('copyBtn').addEventListener('click', async function(){
+  const txt = document.getElementById('policy').value;
+  try {
+    await navigator.clipboard.writeText(txt);
+    alert('Policy text copied. Create hr-policy.html in /admin and paste it there on GitHub.');
+  } catch(e) {
+    alert('Could not copy automatically. Select all the text and copy it manually.');
+  }
 });
 </script>
 </body>

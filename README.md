@@ -1,10 +1,10 @@
-# KGen Website (Relative Links)
+# KGen Website (Relative Links, Fixed Admin Download)
 
-This version uses **relative links** so it works on GitHub **Project Pages** (URL includes your repo name).
+This version fixes the admin page download (waits before revoking object URL and appends link to DOM). It also adds a **Copy** fallback.
 
 URLs:
-- Home: `/index.html` (or the root of your Pages URL)
+- Home: `/index.html`
 - Products: `/products.html`
 - Hidden Admin: `/admin/hr-policy.html` (unlinked; `noindex`)
 
-Deploy steps: same as before (Settings → Pages → Deploy from a branch → main / (root)).
+Deploy steps: Settings → Pages → Deploy from a branch → main / (root).
