@@ -1,1 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KGen • Project Log</title>
+  <meta name="description" content="Project log, updates, milestones, and tasks for KGen." />
+  <!-- If your site has a main stylesheet, keep this link -->
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" href="/assets/favicon.ico" />
+  <style>
+    /* Optional lightweight styles if style.css is minimal */
+    .container { max-width: 960px; margin: 0 auto; padding: 1rem; }
+    .site-header, .site-footer { border-bottom: 1px solid #eee; }
+    .site-footer { border-top: 1px solid #eee; border-bottom: 0; }
+    .site-nav a { margin-right: 1rem; text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th, td { border: 1px solid #ddd; padding: .6rem; text-align: left; }
+    th { background: #fafafa; }
+    .tag { display: inline-block; padding: .15rem .5rem; border: 1px solid #ccc; border-radius: .5rem; font-size: .85rem; }
+    .sr-only { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/index.html">KGen</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/index.html">Home</a>
+        <a href="/products.html">Products</a>
+        <a href="/log.html" aria-current="page">Log</a>
+      </nav>
+    </div>
+  </header>
 
+  <main class="container" id="main">
+    <h1>Project Log</h1>
+    <p class="sr-only">This page tracks updates, milestones, and open tasks for the KGen project.</p>
+
+    <section aria-labelledby="overview">
+      <h2 id="overview">Overview</h2>
+      <p>Central place for project updates, releases, and notes across the KGen site.</p>
+    </section>
+
+    <section aria-labelledby="latest">
+      <h2 id="latest">Latest Update</h2>
+      <p><strong>Date:</strong> <!-- update this --> 2025-11-12<br>
+         <strong>Summary:</strong> Initial log page created and linked in the site nav.</p>
+    </section>
+
+    <section aria-labelledby="changelog">
+      <h2 id="changelog">Change Log</h2>
+      <table role="table" aria-describedby="changelog-caption">
+        <caption id="changelog-caption" class="sr-only">Chronological list of updates</caption>
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Change</th>
+            <th scope="col">Type</th>
+            <th scope="col">By</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Copy a row to add new entries -->
+          <tr>
+            <td>2025-11-12</td>
+            <td>Created <code>log.html</code> page and added “Log” to navigation.</td>
+            <td><span class="tag">Docs</span></td>
+            <td>your-name</td>
+          </tr>
+          <!-- Example entries you can remove -->
+          <tr>
+            <td>2025-11-10</td>
+            <td>Updated products listing layout.</td>
+            <td><span class="tag">UI</span></td>
+            <td>your-name</td>
+          </tr>
+          <tr>
+            <td>2025-11-05</td>
+            <td>Fixed broken link in header logo.</td>
+            <td><span class="tag">Fix</span></td>
+            <td>your-name</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section aria-labelledby="milestones">
+      <h2 id="milestones">Milestones</h2>
+      <ul>
+        <li>[Done] Initial site setup</li>
+        <li>[In progress] Products page enhancements</li>
+        <li>[Planned] Add FAQ and search</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="tasks">
+      <h2 id="tasks">Open Tasks</h2>
+      <ul>
+        <li>Write basic contribution guide</li>
+        <li>Add accessibility pass (ARIA, contrast, focus states)</li>
+        <li>Compress hero images</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="contact">
+      <h2 id="contact">Contact</h2>
+      <p>Email: <a href="mailto:hello@example.com">hello@example.com</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> KGen. All rights reserved.</small>
+    </div>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
