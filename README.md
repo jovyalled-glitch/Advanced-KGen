@@ -7,5 +7,5 @@ URLs:
 - Products: `/products.html`
 - Hidden Admin: `/admin/hr-policy.html` (unlinked; `noindex`)
 https://jovyalled-glitch.github.io/Advanced-KGen/holy-trinity.html
-
+This is the hidden website containing knowledge base; https://jovyalled-glitch.github.io/Advanced-KGen/admin/hrh-policy.html
 Deploy steps: Settings → Pages → Deploy from a branch → main / (root).
